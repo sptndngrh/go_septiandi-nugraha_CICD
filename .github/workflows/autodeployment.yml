@@ -55,3 +55,4 @@ jobs:
             docker rmi ${{ secrets.MY_DOCKERHUB_USERNAME }}/datadocker:latest
             docker pull ${{ secrets.MY_DOCKERHUB_USERNAME }}/datadocker:latest
             docker run -d -p 8080:8080 -e SERVERPORT=${{ secrets.DBPORT }} -e DBUSER=${{ secrets.DBUSER }} -e DBPASS=${{ secrets.DBPASS }} -e DBHOST=${{ secrets.DBHOST }} -e DBPORT=${{ secrets.DBPORT }} -e DBNAME=${{ secrets.DBNAME }} --name restapi ${{ secrets.MY_DOCKERHUB_USERNAME }}/datadocker:latest
+            
