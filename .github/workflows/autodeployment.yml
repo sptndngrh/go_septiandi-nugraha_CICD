@@ -1,0 +1,43 @@
+name: Golang APP Deployment CI CD
+
+#akan melkaukan deploy ketika push ke branch main
+on:
+  push:
+    branches:
+      - main
+
+#jalankan docker dan install
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      name: Checkout
+      uses: actions/checkout@v3
+    -
+      name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+    -
+      name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    #Login to docker hub
+    -
+      name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.MY_DOCKERHUB_USERNAME}}
+        password: ${{ secrets.MY_DOCKERHUB_TOKEN }}
+    #build dan push dockerfile kedalam dockerhub
+    -
+      name: Build and push
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: ${{ secrets.MY_DOCKERHUB_USERNAME }}/beverlyhills:latest
+        
+  
+
+  
+            
