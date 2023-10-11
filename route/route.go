@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"praktikum_23/controllers"
-	"praktikum_23/repositories"
+	"go_septiandi-nugraha_CICD/controllers"
+	"go_septiandi-nugraha_CICD/repositories"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"

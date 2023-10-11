@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"praktikum_23/constants"
+	"go_septiandi-nugraha_CICD/constants"
 	"time"
 
 	"github.com/golang-jwt/jwt"

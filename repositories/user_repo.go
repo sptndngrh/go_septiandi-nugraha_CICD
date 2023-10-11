@@ -1,7 +1,7 @@
 package repositories
 
 import (
-	"praktikum_23/models"
+	"go_septiandi-nugraha_CICD/models"
 
 	"gorm.io/gorm"
 )

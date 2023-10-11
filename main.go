@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"praktikum_22/app/config"
-	"praktikum_22/app/database"
-	"praktikum_22/app/migration"
-	routes "praktikum_22/route"
+	"go_septiandi-nugraha_CICD/app/config"
+	"go_septiandi-nugraha_CICD/app/database"
+	"go_septiandi-nugraha_CICD/app/migration"
+	routes "go_septiandi-nugraha_CICD/route"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"

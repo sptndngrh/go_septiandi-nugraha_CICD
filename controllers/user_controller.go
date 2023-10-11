@@ -3,10 +3,10 @@ package controllers
 import (
 	"fmt"
 	"net/http"
-	"praktikum_23/dto"
-	"praktikum_23/middleware"
-	"praktikum_23/models"
-	"praktikum_23/repositories"
+	"go_septiandi-nugraha_CICD/dto"
+	"go_septiandi-nugraha_CICD/middleware"
+	"go_septiandi-nugraha_CICD/models"
+	"go_septiandi-nugraha_CICD/repositories"
 
 	"github.com/labstack/echo/v4"
 )

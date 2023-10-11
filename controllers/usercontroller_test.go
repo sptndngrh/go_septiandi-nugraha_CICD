@@ -4,9 +4,9 @@ import (
 	"errors"
 	"net/http"
 	"net/http/httptest"
-	"praktikum_23/controllers"
-	"praktikum_23/models"
-	"praktikum_23/repositories"
+	"go_septiandi-nugraha_CICD/controllers"
+	"go_septiandi-nugraha_CICD/models"
+	"go_septiandi-nugraha_CICD/repositories"
 	"strings"
 	"testing"
 

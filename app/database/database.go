@@ -2,7 +2,7 @@ package database
 
 import (
 	"fmt"
-	"praktikum_23/app/config"
+	"go_septiandi-nugraha_CICD/app/config"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

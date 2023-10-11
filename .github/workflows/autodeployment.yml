@@ -36,8 +36,22 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.MY_DOCKERHUB_USERNAME }}/go_docker_test:latest
-        
-  
-
-  
-            
+        #melakukan deploy menggunakan docker
+  deploy-prod:
+    runs-on: ubuntu-latest
+    needs: docker
+    steps:
+      #connect kedalam server menggunakan SSH
+      - name: Connect to server using SSH
+        uses: sptndngrh/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.HOST }} 
+          username: ${{ secrets.USERNAME}} 
+          key: ${{ secrets.KEY }} 
+          port: ${{ secrets.PORT }} 
+          script: |
+            docker stop data
+            docker rm data
+            docker rmi ${{ secrets.MY_DOCKERHUB_USERNAME }}/datadocker:latest
+            docker pull ${{ secrets.MY_DOCKERHUB_USERNAME }}/datadocker:latest
+            docker run -d -p 8080:8080 -e SERVERPORT=${{ secrets.DBPORT }} -e DBUSER=${{ secrets.DBUSER }} -e DBPASS=${{ secrets.DBPASS }} -e DBHOST=${{ secrets.DBHOST }} -e DBPORT=${{ secrets.DBPORT }} -e DBNAME=${{ secrets.DBNAME }} --name restapi ${{ secrets.MY_DOCKERHUB_USERNAME }}/datadocker:latest
